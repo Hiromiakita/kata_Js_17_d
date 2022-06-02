@@ -129,7 +129,23 @@ console.log('operadores')
 // console.log(Boolean(10 === 10))
 // console.log(10 === 10)
 
+// Falsy
+console.log(Boolean(undefined))
+console.log(Boolean(null))
+console.log(Boolean(0))
+console.log(Boolean(NaN))
 
+// verdadero
+console.log(Boolean(' '))
+console.log(Boolean(0))
+console.log(Boolean([]))
 
+let numero
+console.log(numero)
+if (numero) {
+  console.log('es verdadero')
+} else {
+  console.log('es falso')
+}
 
 
