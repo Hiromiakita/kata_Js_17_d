@@ -49,9 +49,9 @@ var nivel = prompt('Qué nivel de curso estás tomando? Course/Carrera/Master');
 // Beca Jesua: 50% de descuento.
 var beca = prompt('Cuentas con alguna beca? Fb/Google/Jesua/No')
 var descuento = 0;
-if (beca == 'Fb') {
+if (beca === 'Fb') {
     descuento = 20;
-} else if (beca == 'Google') {
+} else if (beca === 'Google') {
     descuento = 15;
 } else if (beca === 'Jesua') {
     descuento = 50;
