@@ -11,48 +11,65 @@ let cuentas = [
 ];
 
 // Inicio del programa
-
-// 1. Elegir usuario.
-let usuario = prompt('Escribe tu nombre');
+function login() {
+    // 1. Elegir usuario.
+    let usuario = prompt('Escribe tu nombre');
 // let usuario = prompt('Elige tu usuario 1. Hiromi 2. Luis 3. Carlo');
+    let contra = prompt('Ingresa la contraseña para el usuario: ' + usuario);
+    validarUsuario(usuario, contra)
+}
 
-let contra = prompt('Ingresa la contraseña para el usuario: ' + usuario);
-
-function validarUsuario () {
-
+function validarUsuario (usuario, contra) {
     for(let i = 0; i < cuentas.length; i++) {
-        console.log(cuentas[i].nombre);
+        // console.log(cuentas[i].nombre);
         if(usuario === cuentas[i].nombre) {
             // Usuario existe
-            console.log('sí')
+            // console.log('sí')
             if(contra === cuentas[i].password) {
                 console.log('DATOS CORRECTOS');
-                mostrarMenu();
+                mostrarMenu(i);
             } else {
                 console.log('Contraseña incorrecta')
-            }
+            } 
             return
         } else {
-           console.log('No existe usuario')
+            console.log('no');
         }
     }
 }
 
-validarUsuario();
+login();
 
-function mostrarMenu(){
-    let opcion = prompt('Indica una opción:\n 1. Consultar saldo\n 2. Hacer un retiro \n 3. Hacer un depósito');
+function mostrarMenu(posicionUsuario){
+    let opcion = prompt('Indica una opción:\n 1. Consultar saldo\n 2. Hacer un retiro \n 3. Hacer un depósito \n 4. Salir');
+
+    if(opcion == 1) {
+        consultarSaldo(posicionUsuario)
+    } else if(opcion == 2) {
+        depositar(posicionUsuario)
+    } else if(opcion == 3){
+        retirar(posicionUsuario)
+    } else if(opcion == 3){
+        retirar(posicionUsuario)
+    } else if(opcion == 4){
+        alert('adiós');
+        return
+    } else {
+        alert('opción inválida');
+        mostrarMenu(posicionUsuario);
+    }
 }
 
-function consultarSaldo() {
-
+function consultarSaldo(posicionUsuario) {
+    alert('El saldo del usuario ' + cuentas[posicionUsuario].nombre + ' es de $' + cuentas[posicionUsuario].saldo);
+    mostrarMenu(posicionUsuario)
 }
 
-function depoditar() {
-
+function depositar() {
+    console.log('depositar');
 }
 function retirar() {
-
+    console.log('retirar');
 }
 // if(usuario == && contra ) {
 //     alert('usuario correcto')
