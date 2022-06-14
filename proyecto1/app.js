@@ -18,6 +18,42 @@ let usuario = prompt('Escribe tu nombre');
 
 let contra = prompt('Ingresa la contraseña para el usuario: ' + usuario);
 
+function validarUsuario () {
+
+    for(let i = 0; i < cuentas.length; i++) {
+        console.log(cuentas[i].nombre);
+        if(usuario === cuentas[i].nombre) {
+            // Usuario existe
+            console.log('sí')
+            if(contra === cuentas[i].password) {
+                console.log('DATOS CORRECTOS');
+                mostrarMenu();
+            } else {
+                console.log('Contraseña incorrecta')
+            }
+            return
+        } else {
+           console.log('No existe usuario')
+        }
+    }
+}
+
+validarUsuario();
+
+function mostrarMenu(){
+    let opcion = prompt('Indica una opción:\n 1. Consultar saldo\n 2. Hacer un retiro \n 3. Hacer un depósito');
+}
+
+function consultarSaldo() {
+
+}
+
+function depoditar() {
+
+}
+function retirar() {
+
+}
 // if(usuario == && contra ) {
 //     alert('usuario correcto')
 // } else {
