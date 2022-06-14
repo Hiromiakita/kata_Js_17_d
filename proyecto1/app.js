@@ -71,12 +71,6 @@ function depositar() {
 function retirar() {
     console.log('retirar');
 }
-// if(usuario == && contra ) {
-//     alert('usuario correcto')
-// } else {
-//     alert('ERROR')
-// }
-// Condicionales
 
 // Al seleccionar una cuenta, debes ingresar el password asociado a la cuenta. Si el password es incorrecto, debes notificar al usuario y permitirle intentarlo nuevamente. Si el password es correcto, debes mostrar las siguientes opciones:
 // Consultar saldo
