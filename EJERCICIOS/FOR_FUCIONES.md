@@ -7,13 +7,13 @@ Escribir todos los números que terminan en 0 y estén entre 2 y 121
 
 <h3>3</h3>
 <h4>Extra</h4>
-Joel lleva 5 materias, el quiere saber su promedio al recibir sus calificaciones,// ¿podrías ayudarle a crear un algoritmo que haga eso por el?
+Joel lleva 5 materias, el quiere saber su promedio al recibir sus calificaciones,
+// ¿podrías ayudarle a crear un algoritmo que haga eso por el?
 
 
 ### Ejercicios de Funciones
 <h3>1</h3>
  Hacer una función que convierta pesos a dólares
-
 
 <h3>2</h3>
  Hacer una función que cuente el número de caracteres de una palabra
@@ -64,3 +64,5 @@ https://pastebin.com/Zzk8g7Z6
 
 <h3>10</h3>
 Crea un programa que recorra el arreglo [4,”dos”,8,”tres”,5,9,1,”cero”] y muestre en consola solo los elementos que son tipo número.
+
+
