@@ -10,6 +10,8 @@ let cuentas = [
   { nombre: "Carlos", saldo: 67, password: '123' }
 ];
 
+login();
+
 // Inicio del programa
 function login() {
     // 1. Elegir usuario.
@@ -38,17 +40,15 @@ function validarUsuario (usuario, contra) {
     }
 }
 
-login();
+
 
 function mostrarMenu(posicionUsuario){
-    let opcion = prompt('Indica una opción:\n 1. Consultar saldo\n 2. Hacer un retiro \n 3. Hacer un depósito \n 4. Salir');
+    let opcion = prompt('Indica una opción:\n 1. Consultar saldo\n 2. Hacer un deposito \n 3. Hacer un retiro \n 4. Salir');
 
     if(opcion == 1) {
         consultarSaldo(posicionUsuario)
     } else if(opcion == 2) {
         depositar(posicionUsuario)
-    } else if(opcion == 3){
-        retirar(posicionUsuario)
     } else if(opcion == 3){
         retirar(posicionUsuario)
     } else if(opcion == 4){
@@ -65,11 +65,18 @@ function consultarSaldo(posicionUsuario) {
     mostrarMenu(posicionUsuario)
 }
 
-function depositar() {
-    console.log('depositar');
+function depositar(posicionUsuario) {
+    let ingreso = prompt("Escribe tu ingreso:")
+    ingreso = Number(ingreso)
+    cuentas[posicionUsuario].saldo = cuentas[posicionUsuario].saldo + ingreso;
+    mostrarMenu(posicionUsuario);
 }
-function retirar() {
-    console.log('retirar');
+
+function retirar(posicionUsuario) {
+    let retiro = prompt("Escribe cuánto quieres retirar:")
+    retiro = Number(retiro)
+    cuentas[posicionUsuario].saldo = cuentas[posicionUsuario].saldo - retiro;
+    mostrarMenu(posicionUsuario);
 }
 
 // Al seleccionar una cuenta, debes ingresar el password asociado a la cuenta. Si el password es incorrecto, debes notificar al usuario y permitirle intentarlo nuevamente. Si el password es correcto, debes mostrar las siguientes opciones:
