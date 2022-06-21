@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.inicio {
+    background-color: aquamarine;
+    padding: 20px;
+    height: 100vh;
+    width: 100wh;
+}
+
+.acciones {
+    background-color: blueviolet;
+    padding: 20px;
+    display: none;
+    height: 100vh;
+    width: 100wh;
+}

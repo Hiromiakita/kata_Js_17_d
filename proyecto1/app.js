@@ -10,82 +10,130 @@ let cuentas = [
   { nombre: "Carlos", saldo: 67, password: '123' }
 ];
 
-login();
+// login();
 
 // Inicio del programa
-function login() {
-    // 1. Elegir usuario.
-    let usuario = prompt('Escribe tu nombre');
-    let contra = prompt('Ingresa la contraseña para el usuario: ' + usuario);
-    validarUsuario(usuario, contra)
-}
+// function login() {
+//     // 1. Elegir usuario.
+//     let usuario = prompt('Escribe tu nombre');
+//     let contra = prompt('Ingresa la contraseña para el usuario: ' + usuario);
+//     validarUsuario(usuario, contra)
+// }
 
-function validarUsuario (usuario, contra) {
-    for(let i = 0; i < cuentas.length; i++) {
-        if(usuario === cuentas[i].nombre) {
-            // Usuario existe
-            if(contra === cuentas[i].password) {
-                console.log('DATOS CORRECTOS');
-                mostrarMenu(i)
-            } else {
-                console.log('Contraseña incorrecta')
-            } 
-            return
-        } else {
-            console.log('no');
-        }
-    }
-}
+// function validarUsuario (usuario, contra) {
+//     for(let i = 0; i < cuentas.length; i++) {
+//         if(usuario === cuentas[i].nombre) {
+//             // Usuario existe
+//             if(contra === cuentas[i].password) {
+//                 console.log('DATOS CORRECTOS');
+//                 mostrarMenu(i)
+//             } else {
+//                 console.log('Contraseña incorrecta')
+//             } 
+//             return
+//         } else {
+//             console.log('no');
+//         }
+//     }
+// }
 
 // Al seleccionar una cuenta, debes ingresar el password asociado a la cuenta. Si el password es incorrecto, debes notificar al usuario y permitirle intentarlo nuevamente. Si el password es correcto, debes mostrar las siguientes opciones:
 // Consultar saldo
 // Ingresar monto
 // Retirar monto
 
-function mostrarMenu(posicionUsuario){
-    let opcion = prompt('Indica una opción:\n 1. Consultar saldo\n 2. Hacer un deposito \n 3. Hacer un retiro \n 4. Salir');
+// function mostrarMenu(posicionUsuario){
+//     let opcion = prompt('Indica una opción:\n 1. Consultar saldo\n 2. Hacer un deposito \n 3. Hacer un retiro \n 4. Salir');
 
-    if(opcion == 1) {
-        consultarSaldo(posicionUsuario)
-    } else if(opcion == 2) {
-        depositar(posicionUsuario)
-    } else if(opcion == 3){
-        retirar(posicionUsuario)
-    } else if(opcion == 4){
-        alert('adiós');
-        return
-    } else {
-        alert('opción inválida');
-        mostrarMenu(posicionUsuario);
-    }
-}
+//     if(opcion == 1) {
+//         consultarSaldo(posicionUsuario)
+//     } else if(opcion == 2) {
+//         depositar(posicionUsuario)
+//     } else if(opcion == 3){
+//         retirar(posicionUsuario)
+//     } else if(opcion == 4){
+//         alert('adiós');
+//         return
+//     } else {
+//         alert('opción inválida');
+//         mostrarMenu(posicionUsuario);
+//     }
+// }
 
  
 // Al seleccionar consultar saldo, debe mostrar en pantalla el saldo actual de la cuenta
 // Al seleccionar ingresar monto, el usuario debe escribir el monto a ingresar. Al ingresar el monto, debe mostrarle al usuario el monto ingresado y el nuevo saldo total.
 // Al seleccionar retirar monto, el usuario debe escribir el monto a retirar. Al retirar el monto, debe mostrarle al usuario el monto retirado y el nuevo saldo total.
  
-function consultarSaldo(posicionUsuario) {
-    alert('El saldo del usuario ' + cuentas[posicionUsuario].nombre + ' es de $' + cuentas[posicionUsuario].saldo);
-    mostrarMenu(posicionUsuario)
-}
+// function consultarSaldo(posicionUsuario) {
+//     alert('El saldo del usuario ' + cuentas[posicionUsuario].nombre + ' es de $' + cuentas[posicionUsuario].saldo);
+//     mostrarMenu(posicionUsuario)
+// }
 
-function depositar(posicionUsuario) {
-    let ingreso = prompt("Escribe tu ingreso:")
-    ingreso = Number(ingreso)
-    cuentas[posicionUsuario].saldo = cuentas[posicionUsuario].saldo + ingreso;
-    mostrarMenu(posicionUsuario);
-}
+// function depositar(posicionUsuario) {
+//     let ingreso = prompt("Escribe tu ingreso:")
+//     ingreso = Number(ingreso)
+//     cuentas[posicionUsuario].saldo = cuentas[posicionUsuario].saldo + ingreso;
+//     mostrarMenu(posicionUsuario);
+// }
 
-function retirar(posicionUsuario) {
-    let retiro = prompt("Escribe cuánto quieres retirar:")
-    retiro = Number(retiro)
-    cuentas[posicionUsuario].saldo = cuentas[posicionUsuario].saldo - retiro;
-    mostrarMenu(posicionUsuario);
-}
+// function retirar(posicionUsuario) {
+//     let retiro = prompt("Escribe cuánto quieres retirar:")
+//     retiro = Number(retiro)
+//     cuentas[posicionUsuario].saldo = cuentas[posicionUsuario].saldo - retiro;
+//     mostrarMenu(posicionUsuario);
+// }
 
 // Como regla de negocio, una cuenta no debe de tener más de $990 y menos de $10.
 // Es necesario hacer las validaciones pertinentes en tu código para que no se rompa esta regla de negocio.
 
 // RETO EXTRA PLUS:
 // Si ya posees conocimientos de desarrollo web con html, css y javascript. Haciendo uso del DOM crea una interfaz con html y css que maneje toda la interacción descrita arriba
+
+
+
+
+
+
+
+// ---------------------------------------------------------------------------
+
+// FUNCIONES NUEVAS ADAPTADAS AL DOM (HTML)
+
+function ingresar() {
+    // Tomar datos de los inputs
+    let usuario = document.getElementById("usuario").value;
+    let contrasenia = document.getElementById('contrasenia').value;
+    
+    // alert('El usuario del input es: ' + usuario + ' y la contraseña es: ' + contrasenia);
+
+    // Validar los datos de los inputs
+    validarUsuarioLogin(usuario, contrasenia);
+}
+
+function validarUsuarioLogin (usuario, contra) {
+    let usuarioValido = false;
+    for(let i = 0; i < cuentas.length; i++) {
+        if(usuario === cuentas[i].nombre && contra === cuentas[i].password) {
+            // Definir qué pasará si son correctos
+            alert('DATOS CORRECTOS');
+            usuarioValido = true;
+            mostrarMenuHTML(i)
+            return
+        }
+    }
+    // Definir qué pasará si son incorrectos
+    if(!usuarioValido) {
+        alert('Datos incorrectos');
+    }
+}
+
+function mostrarMenuHTML(posicionUsuario){
+
+    // Ocultar Login
+    document.getElementById("inicio").style.display = "none";
+
+    // Mostrar menú opciones
+    document.getElementById("acciones").style.display = "block";
+
+}
