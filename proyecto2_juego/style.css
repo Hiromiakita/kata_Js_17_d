@@ -1,0 +1,88 @@
+h1 {
+    text-align: center;
+}
+
+.selector-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.opcion {
+    width: 100px;
+    height: 100px;
+    /* display: inline-block; */
+    border: 3px solid black;
+    /* border-radius: 50%; */
+    text-align: center;
+    /* background-color: rgba(204, 204, 204, 0.7); */
+}
+
+.opcion:hover {
+    transform: scale(1.3);
+    border: 6px solid rgb(191, 12, 223);
+
+}
+
+img {
+    width: 75px;
+    height: 75px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 10px;
+}
+
+.segmento {
+    display: inline-block;
+    border: solid black 2px;
+    width: 48%;
+    text-align: center;
+}
+
+.encabezado {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.puntos {
+    font-size: 25px;
+}
+
+.mensajes {
+    text-align: center;
+    font-size: 25px;
+}
+
+#ganador {
+    text-align: center;
+    border-radius: 10px;
+    padding: 7px;
+    font-size: 25px;
+}
+
+.ganar {
+    /* background-color: #0F0; */
+}
+
+.perder {
+    /* background-color: #F00;
+    color: white; */
+}
+
+.empatar {
+    /* background-color: #FF0; */
+}
+
+.container-game {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.marcador {
+    text-align: center;
+    font-size: 25px;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}

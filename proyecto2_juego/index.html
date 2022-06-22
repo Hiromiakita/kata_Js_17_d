@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Piedra, Papel o Tijeras</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h1>PIEDRA, PAPEL O TIJERAS</h1>
+    <p class="marcador"> Marcador</p>
+    <div class="container-game">
+        <p class="puntos" id="jugador1"> 0 </p>
+        <p class="puntos" id="jugador2"> 0 </p>
+    </div>
+    <div class="container-game">
+        <div class="selector-container">
+            <div class="opcion" onclick="seleccionar('piedra')">
+                <img src="./imagenes/piedra.jpeg">
+            </div>
+            <div class="opcion" onclick="seleccionar('papel')">
+                <img src="./imagenes/papel.jpeg">
+            </div>
+            <div class="opcion" onclick="seleccionar('tijera')">
+                <img src="./imagenes/tijeras.jpeg">
+            </div>
+        </div>
+
+        <div class="mensajes">
+            <img id='opcion-cpu' src="./imagenes/interrogación.png">
+        </div>
+    </div>
+
+    <p id='ganador'>:D</p>
+    <script src="app.js"></script>
+</body>
+
+</html>
